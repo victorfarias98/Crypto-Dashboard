@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Crypto Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição
 
-## Available Scripts
+O **Crypto Dashboard** é um painel que permite acompanhar os preços em tempo real das principais criptomoedas do mercado. O projeto usa a API da Binance para fornecer atualizações constantes e precisas sobre as variações de preços de várias moedas, fornecendo análises percentuais desde a abertura do dashboard. Ele também oferece a opção de alternar entre os modos claro e escuro para personalizar a experiência do usuário.
 
-In the project directory, you can run:
+## Criptomoedas Monitoradas
 
-### `npm start`
+1. **Bitcoin (BTC):** A primeira criptomoeda descentralizada e a mais popular do mercado.
+2. **Ethereum (ETH):** Uma plataforma descentralizada de contratos inteligentes que revolucionou os aplicativos descentralizados.
+3. **Solana (SOL):** Uma blockchain de alto desempenho com taxas de transação baixas e processamento rápido.
+4. **Dogecoin (DOGE):** Uma criptomoeda originada como um meme, mas agora com um mercado significativo.
+5. **Ripple (XRP):** Uma moeda digital projetada para pagamentos internacionais eficientes.
+6. **Cardano (ADA):** Uma plataforma de blockchain com abordagem científica para desenvolvimento.
+7. **Polkadot (DOT):** Uma rede que facilita a interoperabilidade entre diferentes blockchains.
+8. **Litecoin (LTC):** Uma alternativa ao Bitcoin com blocos gerados mais rapidamente.
+9. **Binance Coin (BNB):** A moeda oficial da exchange Binance, usada para pagar taxas e outras funcionalidades.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Funcionalidades
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Atualizações em Tempo Real:** Monitoramento contínuo dos preços.
+- **Análise Percentual:** Variações percentuais calculadas desde a abertura do dashboard.
+- **Modo Claro/Escuro:** Alterna entre os modos para personalizar a visualização.
+- **Interface Intuitiva:** Navegação fácil para usuários de todos os níveis.
 
-### `npm test`
+## Requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js:** A versão mais recente do Node.js é recomendada.
+- **npm:** O gerenciador de pacotes incluído no Node.js.
 
-### `npm run build`
+## Instalação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/seu-usuario/crypto-dashboard.git
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Entre no diretório do projeto:
+    ```bash
+    cd crypto-dashboard
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Instale as dependências do projeto:
+    ```bash
+    npm install
+    ```
 
-### `npm run eject`
+## Execução
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para iniciar o projeto, execute o seguinte comando:
+```bash
+npm run start
