@@ -39,19 +39,17 @@ export function initializeWebSocket(store) {
         BNBUSDT: 'BNB'
       };
 
-      if (data.stream) {
-        const symbolKey = symbolMapping[data.stream.toUpperCase()];
-        const price = parseFloat(data.data.c);
+      const symbolKey = symbolMapping[data.s];
+      const price = parseFloat(data.c);
 
-        if (symbolKey) {
-          store.dispatch({
-            type: 'SET_CRYPTO_PRICE',
-            payload: {
-              symbol: symbolKey,
-              price: price
-            }
-          });
-        }
+      if (symbolKey) {
+        store.dispatch({
+          type: 'SET_CRYPTO_PRICE',
+          payload: {
+            symbol: symbolKey,
+            price: price
+          }
+        });
       }
     };
 

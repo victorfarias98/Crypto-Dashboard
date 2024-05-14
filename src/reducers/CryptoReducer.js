@@ -1,16 +1,7 @@
+// reducers/cryptoReducer.js
+
 const initialState = {
   prices: {
-    BTC: 0,
-    ETH: 0,
-    SOL: 0,
-    DOGE: 0,
-    XRP: 0,
-    ADA: 0,
-    DOT: 0,
-    LTC: 0,
-    BNB: 0
-  },
-  percentageChange: {
     BTC: 0,
     ETH: 0,
     SOL: 0,
@@ -26,6 +17,11 @@ const initialState = {
 export default function cryptoReducer(state = initialState, action) {
   switch (action.type) {
     case 'SET_CRYPTO_PRICE':
+      if (!action.payload || !action.payload.symbol || action.payload.price === undefined) {
+        console.error('Invalid SET_CRYPTO_PRICE action payload:', action.payload);
+        return state;
+      }
+
       return {
         ...state,
         prices: {
@@ -33,14 +29,7 @@ export default function cryptoReducer(state = initialState, action) {
           [action.payload.symbol]: action.payload.price
         }
       };
-    case 'SET_PERCENTAGE_CHANGE':
-      return {
-        ...state,
-        percentageChange: {
-          ...state.percentageChange,
-          [action.payload.symbol]: action.payload.change
-        }
-      };
+
     default:
       return state;
   }

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -11,13 +10,24 @@ export default function CryptoDashboard() {
   const [priceDirections, setPriceDirections] = useState({});
   const initialPricesRef = useRef({});
 
-  
+  const saveInitialPrices = (prices) => {
+    localStorage.setItem('initialPrices', JSON.stringify(prices));
+  };
+
+  const loadInitialPrices = () => {
+    const storedPrices = localStorage.getItem('initialPrices');
+    return storedPrices ? JSON.parse(storedPrices) : {};
+  };
+
   useEffect(() => {
-    if (Object.keys(prices).length && Object.keys(initialPricesRef.current).length === 0) {
+    const storedInitialPrices = loadInitialPrices();
+    if (Object.keys(storedInitialPrices).length === 0 && Object.keys(prices).length > 0) {
       initialPricesRef.current = { ...prices };
+      saveInitialPrices(prices);
+    } else if (Object.keys(storedInitialPrices).length > 0) {
+      initialPricesRef.current = { ...storedInitialPrices };
     }
 
-    
     if (Object.keys(initialPricesRef.current).length) {
       const newPercentageChanges = {};
       const newPriceDirections = {};
@@ -40,7 +50,7 @@ export default function CryptoDashboard() {
       setPriceDirections(newPriceDirections);
     }
   }, [prices]);
-  
+
   const renderDirectionIcon = (direction) => {
     if (direction === 'up') return '⬆️';
     if (direction === 'down') return '⬇️';
@@ -48,10 +58,10 @@ export default function CryptoDashboard() {
   };
 
   const renderCryptoCard = (coin, name) => (
-    <div className="crypto-card">
+    <div className="crypto-card" key={coin}>
       <h2>{name}</h2>
       <p>{formatUSD(prices[coin])} {renderDirectionIcon(priceDirections[coin])}</p>
-      <p>Price Variation: {percentageChanges[coin] !== "N/A" ? `${percentageChanges[coin]}%` : "N/A"}</p>
+      <p>Price Variation: {percentageChanges[coin]}%</p>
     </div>
   );
 

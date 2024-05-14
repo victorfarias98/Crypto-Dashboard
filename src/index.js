@@ -1,4 +1,3 @@
-// src/index.js
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
@@ -7,7 +6,6 @@ import App from './App';
 import './styles/global.css';
 import { initializeWebSocket } from './websocket/websocketService';
 
-// Inicie o WebSocket Service
 initializeWebSocket(store);
 
 const container = document.getElementById('root');
